@@ -13,6 +13,9 @@ This project aims to classify spoken audio clips into the following emotions:
 - 😄 Happy  
 - 😢 Sad  
 - 😠 Angry  
+- 😨 Fearful  
+- 🤢 Disgust  
+- 😲 Surprised  
 
 It achieves high classification accuracy using MFCC (Mel Frequency Cepstral Coefficients) features and a deep learning model trained on the RAVDESS dataset.
 
