@@ -18,15 +18,25 @@ This project aims to classify spoken audio clips into the following emotions:
 - 😲 Surprised  
 
 It achieves high classification accuracy using MFCC (Mel Frequency Cepstral Coefficients) features and a deep learning model trained on the RAVDESS dataset.
+---
+
+## 📌 Project Highlights
+
+- 📁 Loaded & preprocessed over **1,400 WAV** files.
+- 🧠 Applied **MFCC extraction** (Mel-frequency cepstral coefficients).
+- 🧪 Performed **data augmentation**: noise addition, pitch shifting, time stretching, and shifting.
+- 🧮 Built a deep neural network using **TensorFlow/Keras**.
+- 🎯 Achieved an accuracy of **~87%** on test data.
+- 📊 Visualized class distribution and training metrics.
 
 ---
 
-## 🧠 Model Summary
+## 🔧 Data Preprocessing
 
-- **Preprocessing**: MFCC extraction using Librosa
-- **Model Architectures**: CNN and LSTM-based deep learning models
-- **Accuracy Achieved**: **~88%**
-- **Framework**: TensorFlow / Keras
+- Extracted 40 MFCCs per frame
+- Zero-padded all features to a max length of 174
+- Encoded emotions using `LabelEncoder`
+- Balanced the dataset by selectively sampling classes
 
 ---
 
@@ -51,20 +61,24 @@ It achieves high classification accuracy using MFCC (Mel Frequency Cepstral Coef
 
 ## 📊 Results
 
-| Emotion | Precision | Recall | F1-Score |
-|---------|-----------|--------|----------|
-| Neutral | 0.92      | 0.92   | 0.92     |
-| Calm    | 0.85      | 0.86   | 0.85     |
-| Happy   | 0.92      | 0.91   | 0.92     |
-| Sad     | 0.85      | 0.89   | 0.87     |
-| Angry   | 0.82      | 0.80   | 0.81     |
+- **Train/Test Split:** 80% training, 20% testing  
+- **Epochs:** 50 (with EarlyStopping)  
+- **Batch Size:** 32  
+- **Final Test Accuracy:** **87%**
 
-- ✅ Overall Accuracy: **88%**
+### 🧾 Classification Report
 
-### 📈 Accuracy & Loss Curves
-![Accuracy Plot](images/accuracy_plot.png)
+| Emotion    | Precision | Recall | F1-Score |
+|------------|-----------|--------|----------|
+| Happy      | 0.92      | 0.91   | 0.92     |
+| Sad        | 0.85      | 0.89   | 0.87     |
+| Angry      | 0.82      | 0.80   | 0.81     |
+| Calm       | 0.85      | 0.86   | 0.85     |
+| Neutral    | 0.92      | 0.92   | 0.92     |
+| Fearful    | 0.83      | 0.82   | 0.82     |
+| Disgust    | 0.88      | 0.86   | 0.87     |
+| Surprised  | 0.89      | 0.88   | 0.88     |
 
-### 📉 Confusion Matrix
-![Confusion Matrix](images/confusion_matrix.png)
+> 📌 **Observation:** The model shows strong performance across all emotions, particularly for *happy*, *neutral*, and *disgust*.
 
 ---
