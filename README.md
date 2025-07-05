@@ -79,6 +79,6 @@ It achieves high classification accuracy using MFCC (Mel Frequency Cepstral Coef
 | Disgust    | 0.88      | 0.86   | 0.87     |
 | Surprised  | 0.89      | 0.88   | 0.88     |
 
-> 📌 **Observation:** The model shows strong performance across all emotions, particularly for *happy*, *neutral*, and *disgust*.
+> 📌 **Observation:** The model shows strong performance across all emotions.
 
 ---
